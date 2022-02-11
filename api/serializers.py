@@ -23,3 +23,9 @@ class GroupSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Group
 		fields = "__all__"
+
+
+class ProviderSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Provider
+		fields = "__all__"

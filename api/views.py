@@ -21,3 +21,7 @@ class GroupViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     permission_classes = IsAuthenticated,
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class ProviderView(viewsets.ModelViewSet):
+    queryset = Provider.objects.all()
+    serializer_class = ProviderSerializer
