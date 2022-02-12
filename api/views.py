@@ -25,3 +25,7 @@ class GroupViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 class ProviderView(viewsets.ModelViewSet):
     queryset = Provider.objects.all()
     serializer_class = ProviderSerializer
+
+class ClientView(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
