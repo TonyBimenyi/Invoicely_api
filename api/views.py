@@ -26,6 +26,9 @@ class ProviderView(viewsets.ModelViewSet):
     queryset = Provider.objects.all()
     serializer_class = ProviderSerializer
 
-class ClientView(viewsets.ModelViewSet):
-    queryset = Client.objects.all()
-    serializer_class = ClientSerializer
+class AbakiriyaView(viewsets.ModelViewSet):
+    queryset = abakiriya.objects.all()
+    serializer_class = AbakiriyaSerializer
+
+    # def get_queryset(self):
+    #     return self.request.filter(created_by=self.request.user)

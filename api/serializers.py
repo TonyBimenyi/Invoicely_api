@@ -30,7 +30,7 @@ class ProviderSerializer(serializers.ModelSerializer):
 		model = Provider
 		fields = "__all__"
 
-class ClientSerializer(serializers.ModelSerializer):
+class AbakiriyaSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = Client
+		model = abakiriya
 		fields = "__all__"

@@ -6,7 +6,7 @@ from .views import *
 
 router = routers.DefaultRouter()
 router.register('providers', ProviderView, basename='provider')
-router.register('clients', ClientView, basename='client')
+router.register('clients', AbakiriyaView, basename='abakiriya')
 
 urlpatterns = [
     path('', include(router.urls)),
