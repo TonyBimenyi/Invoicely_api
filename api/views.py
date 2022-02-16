@@ -27,7 +27,7 @@ class ProviderView(viewsets.ModelViewSet):
     serializer_class = ProviderSerializer
 
 class AbakiriyaView(viewsets.ModelViewSet):
-    queryset = abakiriya.objects.all()
+    queryset = abakiriya.objects.all().order_by('-id')
     serializer_class = AbakiriyaSerializer
 
     # def get_queryset(self):
