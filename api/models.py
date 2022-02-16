@@ -31,8 +31,8 @@ class abakiriya(models.Model):
     created_by = models.ForeignKey(User, related_name='clients', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return '[%r]' % self.name, self.email
+    # def __str__(self):
+    #     return '%s' % self.name, self.email
 
 
   
