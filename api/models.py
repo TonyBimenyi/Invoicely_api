@@ -34,13 +34,13 @@ class abakiriya(models.Model):
     # def __str__(self):
     #     return '%s' % self.name, self.email
 
-    class Team(models.Model):
-        name = models.CharField(max_length=200)
-        org_number = models.CharField(max_length=200)
-        first_invoice_number = models.IntegerField(default=1)
-        created_by = models.ForeignKey(User, related_name='teams', on_delete=models.CASCADE)
+class Team(models.Model):
+    name = models.CharField(max_length=200)
+    org_number = models.CharField(max_length=200)
+    first_invoice_number = models.IntegerField(default=1)
+    created_by = models.ForeignKey(User, related_name='teams', on_delete=models.CASCADE)
 
-        
+
 
 
   

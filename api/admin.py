@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(Provider)
 admin.site.register(abakiriya)
+admin.site.register(Team)

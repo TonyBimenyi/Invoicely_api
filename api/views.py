@@ -30,5 +30,9 @@ class AbakiriyaView(viewsets.ModelViewSet):
     queryset = abakiriya.objects.all().order_by('-id')
     serializer_class = AbakiriyaSerializer
 
+class TeamView(viewsets.ModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+
     # def get_queryset(self):
     #     return self.request.filter(created_by=self.request.user)

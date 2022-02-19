@@ -39,3 +39,10 @@ class AbakiriyaSerializer(serializers.ModelSerializer):
 		representation = super().to_representation(instance)
 		representation["created_by"]=instance.created_by.username
 		return representation
+
+class TeamSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Team
+		fields = "__all__"
+
+	
