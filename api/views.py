@@ -9,6 +9,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, mixins
 from rest_framework.views import APIView
 from rest_framework import viewsets
+from django.core.exceptions import PermissionDenied
 
 from .serializers import *
 from .models import *
@@ -34,5 +35,19 @@ class TeamView(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
 
-    # def get_queryset(self):
-    #     return self.request.filter(created_by=self.request.user)
+    def get_queryset(self):
+        return self.request.user.teams.all()
+
+        if not teams:
+            Team.objects.create(name='', org_number='', created_by=self.request.user)
+        return self.queryset.filter(created_by=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
+    def perform_update(self, serializer):
+        obj = self.get_object()
+
+        if self.request.user != obj.created_by:
+            raise PermissionDenied('Wrong object owner')
+    
