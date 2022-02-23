@@ -65,7 +65,7 @@ class Invoice(models.Model):
     client_contact = models.CharField(max_length=200)
     invoice_type = models.CharField(max_length=250,  choices=CHOICES_TYPE, default=INVOICE)
     due_days = models.IntegerField(default=14)
-    is_credit_for = models.ForeignKey('self', on_delete=models.CASCADE, null=True)
+    is_credit_for = models.ForeignKey('self',blank=True,null=True, on_delete=models.CASCADE)
     is_sent = models.BooleanField(default=False)
     gross_amount = models.DecimalField(max_digits=6, decimal_places=2)
     vat_amount = models.DecimalField(max_digits=6, decimal_places=2)
