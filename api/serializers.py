@@ -45,4 +45,14 @@ class TeamSerializer(serializers.ModelSerializer):
 		model = Team
 		fields = "__all__"
 
+class InvoiceSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Invoice
+		fields = "__all__"
+
+class ItemSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Item
+		fields = "__all__"
+
 	

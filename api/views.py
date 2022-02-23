@@ -50,4 +50,13 @@ class TeamView(viewsets.ModelViewSet):
 
         if self.request.user != obj.created_by:
             raise PermissionDenied('Wrong object owner')
+
+
+class InvoiceView(viewsets.ModelViewSet):
+    queryset = Invoice.objects.all()
+    serializer_class = InvoiceSerializer
+
+class ItemView(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
     
