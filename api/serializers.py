@@ -50,9 +50,15 @@ class InvoiceSerializer(serializers.ModelSerializer):
 		model = Invoice
 		fields = "__all__"
 
+	def to_representation(self, instance):
+		representation = super().to_representation(instance)
+		representation["client"]=instance.client.name,instance.client.email,instance.client.org_number,instance.client.country
+		return representation
+
 class ItemSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Item
 		fields = "__all__"
 
+	
 	
