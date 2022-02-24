@@ -5,7 +5,7 @@ from .models import *
 from django.db import transaction
 from django.contrib.auth.models import Group
 from rest_framework.response import Response
-from django.contrib.auth.models import User
+from django	.contrib.auth.models import User
 
 
 class TokenPairSerializer(TokenObtainPairSerializer):
@@ -46,13 +46,16 @@ class TeamSerializer(serializers.ModelSerializer):
 		fields = "__all__"
 
 class InvoiceSerializer(serializers.ModelSerializer):
+	# client = serializers.HyperlinkedRelatedField(view_name='client-detail')
+
 	class Meta:
 		model = Invoice
 		fields = "__all__"
+		
 
 	def to_representation(self, instance):
 		representation = super().to_representation(instance)
-		representation["client"]=instance.client.name,instance.client.email,instance.client.org_number,instance.client.country
+		representation["client"]=instance.client.name
 		return representation
 
 class ItemSerializer(serializers.ModelSerializer):

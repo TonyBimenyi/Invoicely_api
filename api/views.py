@@ -56,6 +56,9 @@ class InvoiceView(viewsets.ModelViewSet):
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
 
+    # def get_queryset(self):
+    #     return self.queryset.filter(created_by=self.request.user)
+
 class ItemView(viewsets.ModelViewSet):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
