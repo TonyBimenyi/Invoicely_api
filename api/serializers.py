@@ -55,7 +55,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 	def to_representation(self, instance):
 		representation = super().to_representation(instance)
-		representation["client"]=instance.client.name
+		representation["client"]=instance.client.name, instance.client.email
 		return representation
 
 class ItemSerializer(serializers.ModelSerializer):
