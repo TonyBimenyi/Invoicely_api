@@ -76,6 +76,10 @@ class Invoice(models.Model):
     created_by = models.ForeignKey(User, related_name='created_invoices', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # def __str__(self):
+    #     return '%r' % self.client_name, self.client_country
+
+
 class Item(models.Model):
     invoice = models.ForeignKey(Invoice, related_name='items', on_delete=models.CASCADE)
     title = models.CharField(max_length=130)
